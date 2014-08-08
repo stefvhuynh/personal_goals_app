@@ -27,14 +27,31 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
 # gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+group :test do
+  gem 'guard-rspec'
+  gem 'capybara'
+  gem 'faker'
+  gem 'launchy'
+end
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+group :development, :test do
+  gem 'debugger'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+end
+
+# Useful development gems
+group :development do
+  gem 'pry-rails'
+  gem 'binding_of_caller'
+  gem 'better_errors'
+end
 
