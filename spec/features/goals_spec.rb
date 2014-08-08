@@ -29,7 +29,7 @@ describe "goal" do
     describe "completed form" do
 
       describe "invalid form" do
-        before {click_button 'Add'}
+        before { click_button 'Add' }
         it { should have_content 'Add A Goal' }
         it { should have_content 'Title can\'t be blank' }
         it { should have_content 'Shared can\'t be blank' }

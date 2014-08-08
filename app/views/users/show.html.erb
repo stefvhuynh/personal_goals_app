@@ -1,0 +1,10 @@
+<h2><%= @user.username %></h2>
+
+<ul>
+  <% @user.goals.each do |goal| %>
+  <li>
+    <a href="<%= user_goal_url(goal.user, goal) %>"><%= goal.title %></a>
+    <%= goal.completed ? "Achieved" : "In Progress"%>
+  </li>
+  <% end %>
+</ul>
