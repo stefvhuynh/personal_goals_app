@@ -8,14 +8,25 @@ feature "the signup process" do
   end
 
   feature "signing up a user" do
+    context "with valid credentials" do
+      it "shows username on the homepage after signup" do
+        visit new_user_url
+        fill_in 'Username', with: 'Gnarls'
+        fill_in 'Password', with: 'Barkley'
+        click_button 'Sign Up'
 
-    it "shows username on the homepage after signup" do
-      visit new_user_url
-      fill_in 'Username', with: 'Gnarls'
-      fill_in 'Password', with: 'Barkley'
-      click_button 'Sign Up'
+        expect(page).to have_content "Gnarls"
+      end
+    end
 
-      expect(page).to have_content "Gnarls"
+    context "with invalid credentials" do
+      it "shows errors" do
+        visit new_user_url
+        click_button 'Sign Up'
+
+        expect(page).to have_content "Username can't be blank"
+        expect(page).to have_content "Password is too short"
+      end
     end
   end
 end
