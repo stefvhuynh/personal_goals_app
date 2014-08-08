@@ -3,7 +3,6 @@ require 'spec_helper'
 describe "comments" do
   subject { page }
   let(:user) { FactoryGirl.create(:user_with_goals) }
-#  let(:goal) { FactoryGirl.create(:goal) }
   let(:visitor) { FactoryGirl.create(:user) }
 
   context "on user show page" do
