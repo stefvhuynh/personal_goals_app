@@ -1,0 +1,27 @@
+  <%= authenticity_token %>
+
+  <label>Title
+      <input type="text" name="goal[title]" value="<%= @goal.title %>">
+  </label><br>
+
+  <label>Plan
+    <textarea name="goal[plan]"><%= @goal.plan %></textarea>
+  </label><br>
+
+  <label>Public
+    <input type="radio" name="goal[shared]" value="true">
+  </label><br>
+
+  <label>Private
+    <input type="radio" name="goal[shared]" value="false">
+  </label><br>
+
+  <h4>Completed</h4>
+
+  <label>Yes
+    <input type="radio" name="goal[completed]" value="true">
+  </label>
+
+  <label>No
+    <input type="radio" name="goal[completed]" value="false">
+  </label>

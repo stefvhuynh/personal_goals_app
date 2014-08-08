@@ -1,0 +1,9 @@
+<h2>Edit This Goal</h2>
+
+<form action="<%= goal_url(@goal) %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+
+  <%= render "fields" %>
+
+  <button>Update</button>
+</form>

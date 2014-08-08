@@ -1,0 +1,13 @@
+<a href="<%= new_goal_url %>">Add a Goal</a><br>
+
+<h2>Goals and Achievements</h2>
+
+<ul>
+  <% @goals.each do |goal| %>
+  <li>
+    <a href="<%= user_goal_url(goal.user, goal) %>"><%= goal.title %></a>
+    <%= goal.user.username %><br>
+    <%= goal.completed ? "Achieved" : "In Progress"%>
+  </li>
+  <% end %>
+</ul>

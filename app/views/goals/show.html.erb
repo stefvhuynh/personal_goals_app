@@ -1,0 +1,18 @@
+<a href="<%= user_url(@goal.user) %>"><%= @goal.user.username %></a>
+
+<h2><%= @goal.title %>
+  <h5><a href="<%= edit_goal_url(@goal) %>">Edit</a></h5>
+</h2>
+
+<p><%= @goal.plan %></p>
+
+<% if logged_in? && (@goal.user == current_user) %>
+  <%= "This goal is private" unless @goal.shared %>
+<% end %>
+
+<% if @goal.completed %>
+  <p>Achieved!</p>
+<% else %>
+  <p>This goal is in progress...</p>
+<% end %>
+
