@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_filter :require_logged_in!, only: :destroy
+  before_filter :require_logged_out!, except: :destroy
 
   def new
     @user = User.new
@@ -16,7 +18,7 @@ class SessionsController < ApplicationController
       render :new
     else
       log_in!(@user)
-      redirect_to root_url
+      redirect_to goals_url
     end
   end
 

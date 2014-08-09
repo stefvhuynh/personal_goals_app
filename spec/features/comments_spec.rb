@@ -18,7 +18,7 @@ describe "comments" do
     end
 
     it { should have_content user.username }
-    it { should have_content 'You go, girl!'}
+    it { should have_content 'You go, girl!' }
   end
 
   context "on goal show page" do
@@ -30,10 +30,10 @@ describe "comments" do
       click_button 'Log Out'
 
       log_in(user)
-      visit user_goal_url(user, user.goal)
+      visit user_goal_url(user, user.goals.first)
     end
 
-    it { should have_content user.goal.title }
+    it { should have_content user.goals.first.title }
     it { should have_content 'You go, man!' }
   end
 

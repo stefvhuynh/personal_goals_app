@@ -1,4 +1,7 @@
-<a href="<%= new_goal_url %>">Add a Goal</a><br>
+<% if logged_in? %>
+<a href="<%= new_goal_url %>">Add a Goal</a>
+<br>
+<% end %>
 
 <h2>Goals and Achievements</h2>
 

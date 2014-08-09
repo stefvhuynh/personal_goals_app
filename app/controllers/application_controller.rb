@@ -20,4 +20,15 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by_session_token(session[:token])
   end
 
+  def require_logged_in!
+    unless logged_in?
+      flash[:errors] = ["Need to be logged in!"]
+      redirect_to new_session_url
+    end
+  end
+
+  def require_logged_out!
+    redirect_to root_url if logged_in?
+  end
+
 end

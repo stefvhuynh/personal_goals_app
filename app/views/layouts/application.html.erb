@@ -11,7 +11,7 @@
   <a href="<%= goals_url %>">Achievements</a>
 
 <% if logged_in? %>
-  <%= current_user.username %>
+  <a href="<%= user_url(current_user) %>"><%= current_user.username %></a>
   <form action="<%= session_url %>" method="post">
     <%= authenticity_token %>
     <input type="hidden" name="_method" value="delete">

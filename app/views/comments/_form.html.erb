@@ -1,11 +1,16 @@
+<% if logged_in? %>
 <form action="<%= comments_url %>" method="post">
-  <input type="hidden" name="comment[commentable_id]" value="<%= commentable.id %>">
+  <%= authenticity_token %>
 
-  <input type="hidden" name="comment[commentable_type]" value="<%= commentable.class %>">
+  <input type="hidden" name="comment[commentable_id]"
+    value="<%= commentable.id %>">
+  <input type="hidden" name="comment[commentable_type]"
+    value="<%= commentable.class %>">
 
-  <label>Comment
+  <label>Comment:<br>
     <textarea name="comment[content]"></textarea>
-  </label>
+  </label><br>
 
   <button>Publish</button>
 </form>
+<% end %>

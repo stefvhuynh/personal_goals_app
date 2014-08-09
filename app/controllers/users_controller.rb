@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter :require_logged_out!, only: [:new, :create]
 
   def new
     @user = User.new

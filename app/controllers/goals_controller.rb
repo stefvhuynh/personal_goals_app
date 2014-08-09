@@ -1,8 +1,14 @@
 class GoalsController < ApplicationController
+  before_filter :require_logged_in!, except: [:index, :show]
 
   def index
     @goals = Goal.all
     render :index
+  end
+
+  def show
+    @goal = Goal.find(params[:id])
+    render :show
   end
 
   def new
@@ -35,11 +41,6 @@ class GoalsController < ApplicationController
       flash.now[:errors] = @goal.errors.full_messages
       render :edit
     end
-  end
-
-  def show
-    @goal = Goal.find(params[:id])
-    render :show
   end
 
   private
