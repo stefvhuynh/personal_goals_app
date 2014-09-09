@@ -8,3 +8,5 @@ The primary intention of this project was the use of [Rspec](https://rspec.info)
 , the [Factory Girl](https://github.com/thoughtbot/factory_girl) 
 and [Faker](https://github.com/stympy/faker) gems, and writing specs with 
 [Capybara](https://github.com/jnicklas/capybara).
+
+Todo: Missing a few specs.
